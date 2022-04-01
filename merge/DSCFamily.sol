@@ -318,7 +318,11 @@ contract DSCFamily is Ownable {
         address owner;
         string data;
     }
+
     Info[] public infos;
+    function count() external view returns (uint256) {
+        return infos.length;
+    }
 
     function add(string calldata data) external returns (uint256 id) {
         id = infos.length;
